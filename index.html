@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interactive Sales Script</title>
+    <title>1HP Power Leveling - Interactive Sales Script</title>
     <style>
         * {
             margin: 0;
@@ -13,7 +13,7 @@
         
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            line-height: 1.6;
+            line-height: 1.7;
             color: #333;
             background: #f5f5f5;
         }
@@ -24,33 +24,37 @@
         }
         
         .sidebar {
-            width: 300px;
-            background: #2c3e50;
+            width: 320px;
+            background: linear-gradient(180deg, #1a252f 0%, #2c3e50 100%);
             color: white;
             padding: 20px;
             position: fixed;
             height: 100vh;
             overflow-y: auto;
-            box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+            box-shadow: 4px 0 15px rgba(0,0,0,0.2);
         }
         
         .sidebar h2 {
             margin-bottom: 20px;
-            font-size: 1.5em;
+            font-size: 1.4em;
             border-bottom: 2px solid #3498db;
             padding-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
         
         .nav-section {
-            margin-bottom: 25px;
+            margin-bottom: 20px;
         }
         
         .nav-section h3 {
             color: #3498db;
-            font-size: 1.1em;
-            margin-bottom: 10px;
+            font-size: 0.95em;
+            margin-bottom: 8px;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 1.5px;
+            font-weight: 600;
         }
         
         .nav-section ul {
@@ -58,84 +62,129 @@
         }
         
         .nav-section li {
-            margin-bottom: 8px;
+            margin-bottom: 4px;
         }
         
         .nav-section a {
-            color: #ecf0f1;
+            color: #bdc3c7;
             text-decoration: none;
             display: block;
-            padding: 8px 10px;
-            border-radius: 4px;
+            padding: 6px 12px;
+            border-radius: 6px;
             transition: all 0.3s;
-            font-size: 0.95em;
+            font-size: 0.9em;
+            border-left: 3px solid transparent;
         }
         
         .nav-section a:hover {
-            background: #34495e;
+            background: rgba(52, 152, 219, 0.2);
             color: #3498db;
+            border-left-color: #3498db;
             transform: translateX(5px);
         }
         
         .content {
-            margin-left: 300px;
+            margin-left: 320px;
             flex: 1;
-            padding: 40px;
-            max-width: 1200px;
+            padding: 40px 50px;
+            max-width: 1100px;
         }
         
         .section {
             background: white;
-            padding: 30px;
+            padding: 35px;
             margin-bottom: 30px;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
         }
         
         .section h2 {
             color: #2c3e50;
-            font-size: 2em;
-            margin-bottom: 20px;
-            padding-bottom: 10px;
+            font-size: 1.8em;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
             border-bottom: 3px solid #3498db;
+            display: flex;
+            align-items: center;
+            gap: 12px;
         }
         
         .section h3 {
             color: #34495e;
-            font-size: 1.5em;
-            margin-top: 25px;
+            font-size: 1.4em;
+            margin-top: 30px;
             margin-bottom: 15px;
+            padding-left: 15px;
+            border-left: 4px solid #3498db;
         }
         
         .section h4 {
             color: #7f8c8d;
-            font-size: 1.2em;
+            font-size: 1.1em;
             margin-top: 20px;
-            margin-bottom: 10px;
+            margin-bottom: 12px;
+            font-weight: 600;
         }
         
         .highlight {
-            background: #fff3cd;
-            padding: 15px;
-            border-left: 4px solid #ffc107;
-            margin: 15px 0;
-            border-radius: 4px;
+            background: linear-gradient(135deg, #fff9e6 0%, #fff3cd 100%);
+            padding: 18px 20px;
+            border-left: 5px solid #f39c12;
+            margin: 18px 0;
+            border-radius: 0 8px 8px 0;
+            font-weight: 500;
         }
         
         .important {
-            background: #d4edda;
-            padding: 15px;
-            border-left: 4px solid #28a745;
-            margin: 15px 0;
-            border-radius: 4px;
+            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+            padding: 18px 20px;
+            border-left: 5px solid #27ae60;
+            margin: 18px 0;
+            border-radius: 0 8px 8px 0;
         }
         
         .warning {
-            background: #f8d7da;
-            padding: 15px;
-            border-left: 4px solid #dc3545;
+            background: linear-gradient(135deg, #ffebee 0%, #ffcdd2 100%);
+            padding: 18px 20px;
+            border-left: 5px solid #e74c3c;
+            margin: 18px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .script-box {
+            background: #f8f9fa;
+            border: 1px solid #e0e0e0;
+            padding: 20px;
+            border-radius: 8px;
             margin: 15px 0;
-            border-radius: 4px;
+            font-style: italic;
+            color: #2c3e50;
+        }
+        
+        .script-box strong {
+            color: #e74c3c;
+            font-style: normal;
+        }
+        
+        .principle-box {
+            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+            padding: 18px 20px;
+            border-left: 5px solid #2196f3;
+            margin: 18px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .pricing-box {
+            background: linear-gradient(135deg, #f3e5f5 0%, #e1bee7 100%);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border: 2px solid #9c27b0;
+        }
+        
+        .pricing-box h4 {
+            color: #7b1fa2;
+            margin-top: 0;
         }
         
         ul, ol {
@@ -144,50 +193,108 @@
         }
         
         li {
-            margin-bottom: 8px;
+            margin-bottom: 10px;
         }
         
         .jump-link {
             display: inline-block;
-            background: #3498db;
+            background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
             color: white;
-            padding: 8px 15px;
-            border-radius: 4px;
+            padding: 10px 18px;
+            border-radius: 25px;
             text-decoration: none;
             margin: 5px 5px 5px 0;
             font-size: 0.9em;
+            font-weight: 500;
             transition: all 0.3s;
+            box-shadow: 0 2px 8px rgba(52, 152, 219, 0.3);
         }
         
         .jump-link:hover {
-            background: #2980b9;
-            transform: translateY(-2px);
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            transform: translateY(-3px);
+            box-shadow: 0 4px 15px rgba(52, 152, 219, 0.4);
+        }
+        
+        .jump-link.green {
+            background: linear-gradient(135deg, #27ae60 0%, #219a52 100%);
+        }
+        
+        .jump-link.orange {
+            background: linear-gradient(135deg, #e67e22 0%, #d35400 100%);
+        }
+        
+        .jump-link.red {
+            background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+        }
+        
+        .jump-link.purple {
+            background: linear-gradient(135deg, #9b59b6 0%, #8e44ad 100%);
         }
         
         .back-to-top {
             position: fixed;
             bottom: 30px;
             right: 30px;
-            background: #3498db;
+            background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
             color: white;
-            width: 50px;
-            height: 50px;
+            width: 55px;
+            height: 55px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             text-decoration: none;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
             transition: all 0.3s;
+            font-size: 1.3em;
         }
         
         .back-to-top:hover {
-            background: #2980b9;
-            transform: translateY(-3px);
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.35);
         }
         
-        @media (max-width: 768px) {
+        .checklist {
+            background: #fafafa;
+            padding: 15px 20px;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+        
+        .checklist li {
+            list-style: none;
+            padding-left: 30px;
+            position: relative;
+        }
+        
+        .checklist li::before {
+            content: "☐";
+            position: absolute;
+            left: 0;
+            color: #3498db;
+            font-size: 1.2em;
+        }
+        
+        .role-play {
+            background: linear-gradient(135deg, #fff8e1 0%, #ffecb3 100%);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border: 2px dashed #ff9800;
+        }
+        
+        .role-play h4 {
+            color: #e65100;
+            margin-top: 0;
+        }
+        
+        .divider {
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #3498db, transparent);
+            margin: 30px 0;
+        }
+        
+        @media (max-width: 900px) {
             .sidebar {
                 position: static;
                 width: 100%;
@@ -196,6 +303,7 @@
             
             .content {
                 margin-left: 0;
+                padding: 20px;
             }
             
             .container {
@@ -207,16 +315,17 @@
 <body>
     <div class="container">
         <nav class="sidebar">
-            <h2>📋 Navigation</h2>
+            <h2>📋 Sales Script</h2>
             
             <div class="nav-section">
                 <h3>Part 1: Discovery</h3>
                 <ul>
-                    <li><a href="#rapport">Rapport</a></li>
+                    <li><a href="#rapport">Rapport & Frame</a></li>
                     <li><a href="#interview">Subjective Interview</a></li>
                     <li><a href="#depth-questions">Depth Questions</a></li>
                     <li><a href="#desired-situation">Desired Situation</a></li>
-                    <li><a href="#assessment">Reflect & Assessment</a></li>
+                    <li><a href="#assessment">Assessment & Diagnosis</a></li>
+                    <li><a href="#objection-preview">Objection Preview</a></li>
                     <li><a href="#transition">Transition</a></li>
                 </ul>
             </div>
@@ -225,477 +334,909 @@
                 <h3>Part 2: The Pitch</h3>
                 <ul>
                     <li><a href="#primary-pitch">Primary Pitch</a></li>
-                    <li><a href="#temperature-check">Temperature Check</a></li>
-                    <li><a href="#next-steps">Next Steps</a></li>
+                    <li><a href="#temperature-check">Temperature Check (1-10)</a></li>
+                    <li><a href="#double-tie-down">Double Tie-Down</a></li>
+                    <li><a href="#pricing-reveal">Pricing Reveal</a></li>
                 </ul>
             </div>
             
             <div class="nav-section">
                 <h3>Part 3: The Close</h3>
                 <ul>
+                    <li><a href="#pacing-first-objection">Pacing First Objection</a></li>
                     <li><a href="#trial-close">Trial Close</a></li>
-                    <li><a href="#questions">Questions</a></li>
-                    <li><a href="#payment-plan">Payment Plan</a></li>
-                    <li><a href="#objections">Objections</a></li>
-                    <li><a href="#financial-objection">Financial Objection</a></li>
-                    <li><a href="#support-objection">Support Objection</a></li>
-                    <li><a href="#uncertainty-objection">Uncertainty Objection</a></li>
+                    <li><a href="#open-wallet">Open Wallet Framework</a></li>
+                    <li><a href="#payment-options">Payment Options</a></li>
+                    <li><a href="#deposit-close">Deposit Close ($1000)</a></li>
                 </ul>
             </div>
             
             <div class="nav-section">
-                <h3>Part 4: Follow Up</h3>
+                <h3>Objection Handling</h3>
                 <ul>
-                    <li><a href="#follow-up">Follow Up Script</a></li>
+                    <li><a href="#financial-objection">Financial Objection</a></li>
+                    <li><a href="#support-objection">Spouse/Partner</a></li>
+                    <li><a href="#uncertainty-objection">Uncertainty/Risk</a></li>
+                    <li><a href="#time-objection">Time/Timing</a></li>
+                    <li><a href="#tried-before">Tried Before</a></li>
+                </ul>
+            </div>
+            
+            <div class="nav-section">
+                <h3>Special Cases</h3>
+                <ul>
+                    <li><a href="#bridge-program">Bridge Program ($3000)</a></li>
+                    <li><a href="#downsell">Downsell Options</a></li>
+                    <li><a href="#follow-up">Follow-Up Script</a></li>
+                </ul>
+            </div>
+            
+            <div class="nav-section">
+                <h3>Frameworks</h3>
+                <ul>
+                    <li><a href="#ciapatt">CIA-PATT Framework</a></li>
+                    <li><a href="#reframes">Reframes & Patterns</a></li>
                 </ul>
             </div>
         </nav>
         
         <main class="content">
+            <!-- PART 1: DISCOVERY -->
             <div class="section" id="rapport">
-                <h2>PART 1: THE DISCOVERY</h2>
+                <h2>🎯 PART 1: THE DISCOVERY</h2>
                 
-                <h3>RAPPORT</h3>
-                <p class="highlight"><strong>Quick, get into frame as quickly as possible</strong></p>
+                <h3>RAPPORT & FRAME SETTING</h3>
                 
-                <p>Hey X, how are you? How's your day going? Where are you located?</p>
+                <div class="principle-box">
+                    <strong>PRINCIPLE:</strong> Get into frame as quickly as possible. You are the trusted advisor — they need to follow YOUR process.
+                </div>
                 
-                <p>Basically how this is going to work is that we'll start by exploring more about what you have been dealing with, your pain, pain behavior, what you've tried, why those things haven't worked. Actually assess your capacity and share what we find so you can get some clarity on what's happening.</p>
+                <div class="script-box">
+                    <p>Hey [NAME], how are you? How's your day going? Where are you located?</p>
+                    <br>
+                    <p>Basically how this is going to work is that we'll start by exploring more about what you've been dealing with — your pain, pain behavior, what you've tried, why those things haven't worked. We'll actually assess your capacity and share what we find so you can get some clarity on what's happening.</p>
+                    <br>
+                    <p>And based on this, we will determine if you qualify for our program.</p>
+                    <br>
+                    <p>I'd love to explain exactly how we'd help you specifically, and if it's not a good fit for you for whatever reason, I'll let you know and we can figure out the best next steps.</p>
+                    <br>
+                    <p><strong>Does that sound like a good plan to you?</strong></p>
+                </div>
                 
-                <p>And based on this we will determine if you qualify for our program..</p>
-                
-                <p>I'd love to explain exactly how we'd help you specifically, and if it's not a good fit for you for whatever reason, I'll let you know and we can figure out the best next steps. Does that sound like a good plan to you?</p>
+                <div class="highlight">
+                    <strong>KEY:</strong> Get verbal agreement to follow YOUR process before diving in.
+                </div>
             </div>
             
             <div class="section" id="interview">
                 <h3>SUBJECTIVE INTERVIEW + OBJECTIVE (30 Min Max)</h3>
                 
-                <ol>
-                    <li><strong>Background</strong> - Age, Ht, Wt, Work</li>
-                    <li><strong>Targeted exploration</strong> in to pain patterns, aggs, & eases</li>
-                    <li><strong>History & Past Solutions</strong>
-                        <ul>
-                            <li>Medical History</li>
-                        </ul>
-                    </li>
-                    <li><strong>Explore why they think it might not have worked for them.</strong> Explore some "mistakes"
-                        <ul>
-                            <li>Did any of their providers explain what is going on with them</li>
-                        </ul>
-                    </li>
-                    <li>What do they understand about pain?</li>
-                    <li>Schedule, Ergonomics</li>
-                    <li><strong>Goal & Desired Situation</strong>
-                        <ul>
-                            <li>Ultimately, what're you looking to achieve? What's the goal?</li>
-                        </ul>
-                    </li>
-                    <li>Reflect + Objective Test</li>
-                    <li>Explain their Problem.</li>
-                </ol>
+                <div class="checklist">
+                    <ol>
+                        <li><strong>Background</strong> — Age, Height, Weight, Work/Occupation</li>
+                        <li><strong>Targeted exploration</strong> into pain patterns, aggravating factors, & eases</li>
+                        <li><strong>History & Past Solutions</strong>
+                            <ul>
+                                <li>Medical History</li>
+                                <li>What have they tried?</li>
+                                <li>Why do they think it didn't work?</li>
+                            </ul>
+                        </li>
+                        <li><strong>Provider Understanding</strong> — Did anyone explain what's going on with them?</li>
+                        <li><strong>Pain Education</strong> — What do they understand about pain?</li>
+                        <li><strong>Schedule & Ergonomics</strong></li>
+                        <li><strong>Goal & Desired Situation</strong> — "Ultimately, what are you looking to achieve?"</li>
+                    </ol>
+                </div>
                 
-                <h4>Misc (work it in if it makes sense)</h4>
+                <h4>Power Questions (Work In If Relevant)</h4>
                 <ul>
-                    <li>What do you feel has been the biggest thing that's keeping you from figuring this out on your own?</li>
-                    <li>What's your plan if nothing changes?</li>
-                    <li>How would you feel if the next X years are exactly like the last X years?</li>
-                    <li>Can I ask you an honest question? How would it feel if you were on your deathbed and you'd never figured this out?</li>
-                    <li>You've been thinking about this for X years, what specifically is it about right now that has you ready to actually take this seriously?</li>
-                    <li>Have you tried anything in the past to fix this?</li>
-                    <li>Considering you're still struggling with this, what about that process didn't work for you specifically?</li>
-                    <li>What specifically motivated you to book this call and learn more about working with us?</li>
-                    <li>So are you in the place where you're actually looking to invest to get help with this or are you kinda just looking for free advice?</li>
-                    <li>Is anyone joining you in this? Any business partners? Any life partners involved? What's their name? I just hate saying "the partner".</li>
-                    <li>What do they think about you looking for help to figure this out?</li>
-                    <li>Do they know you have a call with us today?</li>
+                    <li><em>"What do you feel has been the biggest thing keeping you from figuring this out on your own?"</em></li>
+                    <li><em>"What's your plan if nothing changes?"</em></li>
+                    <li><em>"How would you feel if the next X years are exactly like the last X years?"</em></li>
+                    <li><em>"You've been thinking about this for X years — what specifically about RIGHT NOW has you ready to actually take this seriously?"</em></li>
+                    <li><em>"Considering you're still struggling with this, what about that process didn't work for you specifically?"</em></li>
+                    <li><em>"So are you in a place where you're actually looking to invest to get help with this, or are you kinda just looking for free advice?"</em></li>
                 </ul>
+                
+                <div class="important">
+                    <strong>PARTNER CHECK (Ask Early!):</strong>
+                    <ul>
+                        <li>"Is anyone joining you in this? Any life partners involved?"</li>
+                        <li>"What do they think about you looking for help with this?"</li>
+                        <li>"Do they know you have a call with us today?"</li>
+                    </ul>
+                </div>
             </div>
             
             <div class="section" id="depth-questions">
                 <h3>DEPTH QUESTIONS</h3>
+                <p>Use these to dig deeper when you need more clarity:</p>
                 <ul>
-                    <li>How do you feel about that?</li>
-                    <li>Why specifically?</li>
-                    <li>How specifically?</li>
-                    <li>In what way?</li>
-                    <li>Tell me more?</li>
-                    <li>Can I ask you an honest question?</li>
+                    <li><em>"How do you feel about that?"</em></li>
+                    <li><em>"Why specifically?"</em></li>
+                    <li><em>"How specifically?"</em></li>
+                    <li><em>"In what way?"</em></li>
+                    <li><em>"Tell me more..."</em></li>
+                    <li><em>"Can I ask you an honest question?"</em></li>
                 </ul>
             </div>
             
             <div class="section" id="desired-situation">
                 <h3>DESIRED SITUATION</h3>
-                <ul>
-                    <li><strong>Functional Desire:</strong> What exactly do you need to be able to do every day and week?</li>
-                    <li><strong>Personal Desire:</strong> What are your personal goals that you want this transformation to allow you to achieve?</li>
-                </ul>
+                
+                <div class="script-box">
+                    <p><strong>Functional Desire:</strong> "What exactly do you need to be able to do every day and week?"</p>
+                    <br>
+                    <p><strong>Personal Desire:</strong> "What are your personal goals that you want this transformation to allow you to achieve?"</p>
+                </div>
+                
+                <div class="highlight">
+                    <strong>Note these down!</strong> You'll use their exact words when you close.
+                </div>
             </div>
             
             <div class="section" id="assessment">
                 <h3>REFLECT, OBJECTIVE & ASSESSMENT</h3>
                 
-                <p>Lets' review - reflect their entire situation to them to show you understand what they are dealing with. Did I miss anything?</p>
-                
-                <h4>OBJECTION PREVIEW</h4>
-                <p>"Quick check—on the form you mentioned you're comfortable with the X–Y range if the program turns out to be the right fit. Is that still about right?"</p>
-                
-                <p>Now we're going to do a quick assessment to see where you are in terms of your endurance.</p>
+                <div class="script-box">
+                    <p>"Let's review — [reflect their entire situation back to them to show you understand what they're dealing with]"</p>
+                    <br>
+                    <p><strong>"Did I miss anything?"</strong></p>
+                </div>
                 
                 <p><strong>Perform Endurance Test</strong></p>
                 
                 <div class="important">
-                    <strong>Physical Therapy Diagnosis</strong>
+                    <strong>Physical Therapy Diagnosis — Show Them:</strong>
                     <ul>
-                        <li>Show them where they are</li>
-                        <li>Share our normative values, our experience</li>
+                        <li>Where they are currently</li>
+                        <li>Share normative values & your experience</li>
                         <li>Highlight pain relevance</li>
-                        <li>Preview the idea that they will understand how long it should take when they get back to 100%.</li>
+                        <li>Preview: They'll understand timeline when they get back to 100%</li>
                     </ul>
                 </div>
+            </div>
+            
+            <div class="section" id="objection-preview">
+                <h3>OBJECTION PREVIEW (Critical!)</h3>
+                
+                <div class="warning">
+                    <strong>DO THIS BEFORE THE PITCH!</strong> This prevents surprise objections later.
+                </div>
+                
+                <div class="script-box">
+                    <p>"Quick check — on the form you mentioned you're comfortable with the $X–$Y range if the program turns out to be the right fit. <strong>Is that still about right?</strong>"</p>
+                </div>
+                
+                <p>If they hesitate here, dig in NOW — not after you pitch.</p>
             </div>
             
             <div class="section" id="transition">
-                <h3>TRANSITION</h3>
+                <h3>TRANSITION TO PITCH</h3>
                 
-                <p>These are going to be the things you have to address to get to back to your version of 100% and based on everything you've shared, you're a great candidate to Power Leveling Program that we know can help you.</p>
+                <div class="script-box">
+                    <p>"These are going to be the things you have to address to get back to your version of 100%, and based on everything you've shared, you're a great candidate for our Power Leveling Program that we know can help you."</p>
+                    <br>
+                    <p>"The reason I can say that so confidently is because you kinda remind me of [<strong>Relevant Client Result</strong>]."</p>
+                    <br>
+                    <p><strong>"That said, would you like me to explain what our specific process looks like and how the program works?"</strong></p>
+                </div>
                 
-                <p>The reason I can say that so confidently is because you kinda remind me of [Relevant Client Result].</p>
-                
-                <p>That said, would you like me to explain what our specific process looks like and how the program works?</p>
+                <div class="divider"></div>
                 
                 <div class="warning">
-                    <h4>If they are not a good fit: Downsell to Troubleshooter only</h4>
-                    <p>(If they are not a good fit, politely wrap up the call and assign some homework for them to do to help them become a good fit in the future)</p>
-                    
-                    <h4>If Extremely Chronic / Sensitized / High Fear..?</h4>
-                    <p>Based on your situation, I think you will need a bit more guidance around understanding pain.</p>
-                    
-                    <p>Right now Elliot and I are completely booked for the next quarter but we are still offering coaching based support through Brett our occupational therapist and chronic pain specialist.</p>
-                    
-                    <p>You can book a link through here and it will be helpful to learn more about pain. The two best resources available are the explain pain handbook or the way out by alan gordon. If you read these and go into the coaching session it can help alot with the coaching process</p>
-                    
-                    <h4>If Simple Problem (you can tell they don't have much money)</h4>
-                    <ul>
-                        <li>Troubleshooter only?</li>
-                    </ul>
-                    
-                    <h4>Downsell Pitch</h4>
-                    <ol>
-                        <li>Troubleshooter with Calls → This will benefit you. Through this call you actually get a 20% discount. It ends in 24 hrs</li>
-                        <li>Generate the code for them.</li>
-                        <li>If you use this no refunds.</li>
-                    </ol>
+                    <h4>If NOT a Good Fit — Downsell Options:</h4>
+                    <a href="#bridge-program" class="jump-link purple">→ Bridge Program ($3000)</a>
+                    <a href="#downsell" class="jump-link orange">→ Other Downsell Options</a>
                 </div>
             </div>
             
+            <!-- PART 2: THE PITCH -->
             <div class="section" id="primary-pitch">
-                <h2>PART 2: THE PITCH</h2>
+                <h2>🎤 PART 2: THE PITCH</h2>
                 
-                <h3>Primary Pitch</h3>
+                <h3>PRIMARY PITCH</h3>
                 
-                <p class="highlight"><strong>I help [ICA] go from [ZERO STATE] to [HERO STATE] using [FORMULA] so that they can [CORE DESIRE(S)]. Is that clear?</strong></p>
+                <div class="principle-box">
+                    <strong>FORMULA:</strong> I help [ICA] go from [ZERO STATE] to [HERO STATE] using [FORMULA] so that they can [CORE DESIRES].
+                </div>
                 
-                <p>So we help <em>___ like yourself go from being confused and frustrated by their persistent wrist pain, which they've often tried to resolve for years without success and have explored 3-5 avenues of care to getting back to doing what they want to do with work and their hobbies without thinking about pain and feel confident and secure in pursuing any professional or individual passions</em></p>
+                <div class="script-box">
+                    <p>"So we help <strong>high-performing professionals like yourself</strong> go from being confused and frustrated by their persistent wrist pain — which they've often tried to resolve for years without success, exploring 3-5 avenues of care — to <strong>getting back to doing what they want to do with work and hobbies without thinking about pain</strong>, feeling confident and secure in pursuing any professional or individual passions.</p>
+                    <br>
+                    <p><strong>Is that clear?</strong></p>
+                    <br>
+                    <p>And we typically work with clients like you who have struggled with [<em>label their specific pain</em>] and we help them through:</p>
+                    <ul>
+                        <li><strong>Phase 1:</strong> Establishing capacity and building endurance</li>
+                        <li><strong>Phase 2:</strong> Teaching how to safely increase wrist & hand use with work and hobbies</li>
+                        <li><strong>Phase 3:</strong> Improving understanding of pain</li>
+                    </ul>
+                    <p><strong>Does that make sense?</strong></p>
+                </div>
                 
-                <p><em>I help high-performing professionals eliminate chronic wrist pain—even after years of failed treatments—so they can use their hands again without thinking about pain.</em></p>
-                
-                <p>So they can get back to doing what they want without thinking about pain. Is that clear?</p>
-                
-                <p>And we typically work with clients like you who have struggled with _____ (label their specific pain) and we help them by</p>
-                
-                <ul>
-                    <li><strong>Phase 1:</strong> Establishing their capacity and Building their endurance</li>
-                    <li><strong>Phase 2:</strong> Teaching them how to safely increasing wrist & hand use with work and hobbies</li>
-                    <li><strong>Phase 3:</strong> Improving their understanding of pain</li>
-                </ul>
-                
-                <p><strong>Does that make sense?</strong></p>
-                
-                <p>We do this by giving you access to our step by step recovery system inside the 1HP App. It starts by establishing a comprehensive baseline with me or Dr. Smithson, then establishes a plan, helps you understand how to progress and manage any situation throughout recovery</p>
-                
-                <p>You also get access private community where you can ask questions anytime, get quick feedback, and stay connected with others going through the same process.</p>
-                
-                <p>and most importantly you'll get direct access to me or anyone on our team. We will be there every step of the way because You'll have ten one-on-one check-in calls to make sure you're improving as quickly as possible and every week we'll host live Zoom Clinics where I go through questions you can submit (anonymously), review real cases and questions live, and help members troubleshoot whatever's getting in their way.</p>
-                
-                <p>The goal's simple — you'll have a clear structure, constant support, and a real path back to full capacity.</p>
-                
-                <p>Any questions on that?</p>
+                <div class="script-box">
+                    <p>"We do this by giving you access to our step-by-step recovery system inside the 1HP App. It starts by establishing a comprehensive baseline with me or Dr. Smithson, then establishes a plan, helps you understand how to progress and manage any situation throughout recovery.</p>
+                    <br>
+                    <p>You also get access to a private community where you can ask questions anytime, get quick feedback, and stay connected with others going through the same process.</p>
+                    <br>
+                    <p>And most importantly, you'll get direct access to me or anyone on our team. We will be there every step of the way because you'll have <strong>ten one-on-one check-in calls</strong> to make sure you're improving as quickly as possible. Every week we host live Zoom Clinics where I go through questions you can submit (anonymously), review real cases live, and help members troubleshoot whatever's getting in their way.</p>
+                    <br>
+                    <p>The goal is simple — you'll have a clear structure, constant support, and a real path back to full capacity.</p>
+                    <br>
+                    <p><strong>Any questions on that?</strong>"</p>
+                </div>
             </div>
             
             <div class="section" id="temperature-check">
-                <h3>TEMPERATURE CHECK</h3>
+                <h3>TEMPERATURE CHECK (1-10 Scale)</h3>
                 
-                <p>Great! Then in terms of the process and the program specifically, how do you feel?</p>
+                <div class="warning">
+                    <strong>CRITICAL:</strong> Do NOT reveal pricing until they're 8+ on the process!
+                </div>
                 
-                <p>If they are <strong>[FEELING ALIGNED/CERTAIN]</strong> Why does it feel good specifically?</p>
+                <div class="script-box">
+                    <p>"Great! So in terms of the process and the program specifically — <strong>how do you feel?</strong>"</p>
+                    <br>
+                    <p>"On a scale of 1-10... 1 being 'this sounds horrible, I want to get off this call' and 10 being 'this sounds like exactly what I need' — <strong>where do you feel you fall in terms of just the process?</strong>"</p>
+                </div>
                 
-                <p>if they are <strong>[FEELING UNALIGNED/UNCERTAIN]</strong> Gotcha! What specifically do you feel is holding you back from feeling certain about this?</p>
+                <div class="important">
+                    <h4>If 8-10:</h4>
+                    <p>"Why does it feel good specifically?" → Proceed to Double Tie-Down</p>
+                </div>
                 
-                <p class="important">(Don't move on until they feel aligned/certain about the process)</p>
-                
-                <h4>TRANSITION</h4>
-                <p>Considering you feel good with the process and you feel like it's exactly what you need, I'd 100% like to invite you to join my program. That said, where do you feel like you wanna go from here?</p>
+                <div class="warning">
+                    <h4>If 7 or Below:</h4>
+                    <div class="script-box">
+                        <p>"So that's pretty [high/decent]... when you say '[their number]' what does that mean to you exactly?"</p>
+                        <br>
+                        <p>"What specifically do you feel is holding you back from being a 9 or 10?"</p>
+                    </div>
+                    <p><strong>DO NOT MOVE ON</strong> until they're 8+ on the process!</p>
+                    <br>
+                    <a href="#uncertainty-objection" class="jump-link red">→ Handle Uncertainty</a>
+                </div>
             </div>
             
-            <div class="section" id="next-steps">
-                <h3>NEXT STEPS</h3>
+            <div class="section" id="double-tie-down">
+                <h3>DOUBLE TIE-DOWN</h3>
                 
-                <p>Cool! So in order to get started, the first thing we do is we process the investment on the call and then we send you an email immediately with all the next steps and everything you need to get started.</p>
+                <div class="principle-box">
+                    <strong>PRINCIPLE:</strong> Get verbal confirmation TWICE on the process before discussing price. This isolates objections and prevents smokescreens.
+                </div>
                 
-                <p>As a founding member you have the one time opportunity to work with me AND dr. Smithson live and get lifetime access with our maximum amount of 1:1 support</p>
+                <div class="script-box">
+                    <p><strong>TIE-DOWN #1:</strong> "So just to be clear — investment aside — you feel like this process is what you need to get to [THEIR OUTCOME]?"</p>
+                    <br>
+                    <p><strong>TIE-DOWN #2 (How vs Should):</strong> "So you're not in a 'SHOULD I do this' place where you're going back and forth on whether this is the right next step... it sounds like you're more in a 'HOW can I do this' place where you're 100% certain this is the right path — it's just a matter of making it work. <strong>Is that fair to say?</strong>"</p>
+                </div>
                 
-                <p>Does that all make sense?</p>
+                <div class="highlight">
+                    <strong>Wait for verbal "Yes" before proceeding to pricing!</strong>
+                </div>
+            </div>
+            
+            <div class="section" id="pricing-reveal">
+                <h3>PRICING REVEAL</h3>
                 
-                <p><strong>[DIDN'T ASK ABOUT PRICE]</strong> The only thing left to cover is the investment. So are you cool to go over that?</p>
+                <div class="script-box">
+                    <p>"Considering you feel good about the process and it's exactly what you need, I'd 100% like to invite you to join our program."</p>
+                    <br>
+                    <p>"So in order to get started, the first thing we do is process the investment on the call and then send you an email immediately with all next steps and everything you need to get started."</p>
+                    <br>
+                    <p>"As a founding member, you have a one-time opportunity to work with me AND Dr. Smithson live and get lifetime access with our maximum amount of 1:1 support."</p>
+                    <br>
+                    <p><strong>"Does that all make sense?"</strong></p>
+                </div>
                 
-                <p><strong>[ASKED ABOUT PRICE]</strong> So in the near future the investment to join will be $X, but if you join today as a founding member the investment is just $X.</p>
+                <div class="pricing-box">
+                    <h4>💰 Current Pricing Structure</h4>
+                    <ul>
+                        <li><strong>Power Leveling Program:</strong> $5,000 (one-time)</li>
+                        <li><strong>2-Pay Option:</strong> $2,500 x 2 payments (for true financial objections)</li>
+                        <li><strong>Deposit Option:</strong> $1,000 refundable (20% — for those needing time)</li>
+                        <li><strong>Bridge Program:</strong> $3,000 (for existing Troubleshooter customers)</li>
+                    </ul>
+                </div>
                 
-                <ul>
-                    <li>$5000 (Future)</li>
-                    <li>$3000 (Now)</li>
-                </ul>
+                <div class="script-box">
+                    <p><strong>[If they haven't asked about price]:</strong> "The only thing left to cover is the investment. Are you cool to go over that?"</p>
+                    <br>
+                    <p><strong>[Drop the price]:</strong> "The investment to join the Power Leveling Program is $5,000."</p>
+                    <br>
+                    <p><strong>[BE QUIET — Let them respond first!]</strong></p>
+                </div>
                 
-                <p class="warning"><strong>[BE QUIET]</strong></p>
-                
-                <div class="jump-links">
+                <div class="jump-links" style="margin-top: 20px;">
                     <p><strong>What happens next?</strong></p>
-                    <a href="#trial-close" class="jump-link">→ Positive Reaction</a>
-                    <a href="#questions" class="jump-link">→ They Ask a Question</a>
-                    <a href="#trial-close" class="jump-link">→ Silent</a>
-                    <a href="#payment-plan" class="jump-link">→ Ask for Payment Plan</a>
-                    <a href="#objections" class="jump-link">→ Have Objection</a>
+                    <a href="#trial-close" class="jump-link green">→ Positive Reaction</a>
+                    <a href="#pacing-first-objection" class="jump-link orange">→ They Hesitate/Object</a>
+                    <a href="#open-wallet" class="jump-link">→ Financial Concern</a>
+                    <a href="#support-objection" class="jump-link purple">→ Need to Talk to Partner</a>
+                </div>
+            </div>
+            
+            <!-- PART 3: THE CLOSE -->
+            <div class="section" id="pacing-first-objection">
+                <h2>🎯 PART 3: THE CLOSE</h2>
+                
+                <h3>PACING THE FIRST OBJECTION</h3>
+                
+                <div class="principle-box">
+                    <strong>PURPOSE:</strong> Tie down certainty on the process BEFORE handling finances/partner objections. Discover the REAL objection. Maintain leadership.
+                </div>
+                
+                <div class="script-box">
+                    <p><strong>Step 1 - Pace & Tie Down:</strong></p>
+                    <p>"No problem."</p>
+                    <br>
+                    <p>"For a second, let's just pretend that money is out of the equation. How do you feel about the <strong>process specifically</strong>? Do you feel like ultimately, it's what you need to get to [THEIR OUTCOME]?"</p>
+                </div>
+                
+                <h4>If They Agree:</h4>
+                <div class="script-box">
+                    <p><strong>Option 1 (How vs Should):</strong></p>
+                    <p>"So just to be clear... you're not in a 'SHOULD I do this' place where you're going back and forth on if this is the best next step. It sounds like you're more in a 'HOW can I do this' place where you're 100% certain this is the right path — it's just a matter of making it work financially?"</p>
+                    <br>
+                    <p><strong>Option 2 (Isolation):</strong></p>
+                    <p>"So just to be clear — [OBJECTION] aside — there's nothing keeping you from being less than 100% certain that this is what you need?"</p>
+                </div>
+                
+                <h4>If They're Uncertain:</h4>
+                <div class="script-box">
+                    <p>"No worries, and I appreciate you being honest about that."</p>
+                    <br>
+                    <p>"Now can I be honest with you for a second? You just got done telling me you're a [X] out of 10 on the process because [REASON]... and now it seems like you're nowhere near that certain. So can you be honest with me? <strong>What's really going on?</strong>"</p>
+                </div>
+                
+                <div class="important">
+                    <strong>Three Choices Framework:</strong>
+                    <p>"Anytime people feel less than 100% certain, it's typically 1 of 3 things:</p>
+                    <ol>
+                        <li>You aren't 100% sure the process will work for you</li>
+                        <li>You don't trust me or the company</li>
+                        <li>You KNOW this will work and trust me — it's just a matter of making it work financially</li>
+                    </ol>
+                    <p><strong>Which do you feel like you're at?"</strong></p>
                 </div>
             </div>
             
             <div class="section" id="trial-close">
-                <h2>PART 3: THE CLOSE</h2>
-                
-                <p class="important">REMEMBER OUR GOAL IS TO HELP THEM MAKE THE BEST DECISION FOR THEMSELVES. We can explicitly tell them this.</p>
-                
                 <h3>TRIAL CLOSE</h3>
                 
-                <p>How do you feel?</p>
+                <div class="highlight">
+                    <strong>REMEMBER:</strong> Our goal is to help them make the best decision for themselves.
+                </div>
                 
-                <p>Ready to get started?</p>
-                
-                <p>Awesome! We process the investment through stripe invoice which allows you to use any method of payment you prefer. Is this email the best one to send the information to?</p>
-            </div>
-            
-            <div class="section" id="questions">
-                <h3>QUESTION</h3>
-                
-                <p><strong>[CLEAR INTENTIONED QUESTION]</strong> (Respond with brevity) Does that make sense? How do you feel?</p>
-                
-                <p><strong>[UNCLEAR INTENTIONED QUESTION]</strong> Is there a specific reason you're asking? (Respond with brevity) Does that make sense? How do you feel?</p>
-                
-                <h4>Do you have any guarantees? They've had a bad experience previously</h4>
-                <p>We guarantee measurable improvement. Follow the system for 12 weeks — complete your weekly sessions, track your progress, and if you're still not satisfied, we'll refund you in full.</p>
-            </div>
-            
-            <div class="section" id="payment-plan">
-                <h3>PAYMENT PLAN (QUESTION - SOMETIMES PEOPLE WILL JUST ASK)</h3>
-                
-                <p>It depends, most people just pay the investment upfront, but for certain people, where that's simply not possible, what we do is we break it up for them.</p>
-                
-                <p>To be totally upfront though, if I do it's just a little bit more expensive in total, by the nature of breaking it up, so I always recommend to everyone, to just pay it off in full if they can, simply because 1) it's the most cost effective option and 2) even if we do break it up, you're gonna end up paying it anyway. Make sense?</p>
-                
-                <p class="highlight"><strong>ONLY IF NECESSARY. Type it out for them</strong></p>
-                
-                <ul>
-                    <li>$3000 For Full Price</li>
-                    <li>$3500/ 2 Months = $1750 x2</li>
-                    <li>$4000 / 3 Months = $1334 x3</li>
-                </ul>
-                
-                <p>How's that feel?</p>
-                
-                <div class="jump-links">
-                    <p><strong>What happens next?</strong></p>
-                    <a href="#trial-close" class="jump-link">→ Positive Reaction</a>
-                    <a href="#objections" class="jump-link">→ Have Objection</a>
-                    <a href="#objections" class="jump-link">→ Ask Another Question</a>
+                <div class="script-box">
+                    <p>"How do you feel?"</p>
+                    <br>
+                    <p>"Ready to get started?"</p>
+                    <br>
+                    <p>"Awesome! We process the investment through Stripe invoice which allows you to use any payment method you prefer. <strong>Is this email the best one to send the information to?</strong>"</p>
                 </div>
             </div>
             
-            <div class="section" id="objections">
-                <h3>OBJECTION</h3>
+            <div class="section" id="open-wallet">
+                <h3>OPEN WALLET FRAMEWORK</h3>
                 
-                <h4>STEP 1: CLARIFY</h4>
+                <div class="warning">
+                    <strong>CRITICAL:</strong> Do NOT offer payment plans without going through this process first! Play ONE card at a time.
+                </div>
                 
-                <p><strong>A) GOAL:</strong> No problem at all, I truly appreciate the honesty. Can I be 100% honest with you? My goal is simply to help you make the best decision for yourself moving forward. Whether that be to join or not, both are totally fine with me. Is that clear?</p>
+                <div class="script-box">
+                    <p>"So finances aside, there isn't anything else keeping you from being less than 100% certain this is what you want to do?"</p>
+                    <br>
+                    <p>"So that aside, you're 100% in?"</p>
+                    <br>
+                    <p>"Awesome, well I'm happy to hear you're committed to getting on board! This stuff happens all the time, totally normal."</p>
+                    <br>
+                    <p>"Most of my clients do take care of the investment upfront. But for certain clients, I don't feel like that's the best thing based on their situation financially, so we allow them to break it up."</p>
+                    <br>
+                    <p>"Since it's your goal to do this... <strong>are you comfortable having an open and honest conversation about exactly where you're at financially right now?</strong> Based on that, we can figure out what's the best next step."</p>
+                </div>
                 
-                <p><strong>B) SCOPE:</strong> That said then, aside from [OBJECTION], is there anything else stopping you from getting started? Like anything at all?</p>
+                <div class="important">
+                    <h4>Open Wallet Questions:</h4>
+                    <ol>
+                        <li><strong>"What's your cash on hand exactly right now?"</strong></li>
+                        <li><strong>"After expenses and everything, what could you put aside to invest every month?"</strong></li>
+                        <li><strong>"Do you have access to any credit right now? Credit cards, personal loans, lines of credit — how much is available in total?"</strong></li>
+                        <li><em>[If needed]:</em> "Do you have any family/friends who'd be open to supporting you?"</li>
+                    </ol>
+                </div>
                 
-                <p><strong>C) DESIRE:</strong> And just so I'm clear, if [OBJECTION] wasn't an issue, would your ideal situation be to get started today?</p>
-                
-                <p><strong>D) SCALE:</strong></p>
-                
-                <h4>FINANCIAL OBJECTION:</h4>
-                <ul>
-                    <li>What exactly do you have available right now to invest?</li>
-                    <li>Is this a lot of money for you?
-                        <ul>
-                            <li>Yes love that - it means you're gonna try hard</li>
-                        </ul>
-                    </li>
-                    <li>After expenses and everything, what could you put aside to invest every month?</li>
-                    <li>Do you have access to any credit right now? Like credit cards, personal loans, lines of credit. How much is available in total?</li>
-                    <li>[IF NEEDED] Do you have any family/friends who'd be open to supporting you? Is there anything lying around the house you could sell on Facebook Marketplace or to raise funds towards the investment?</li>
-                </ul>
-                
-                <h4>SUPPORT OBJECTION:</h4>
-                <ul>
-                    <li>Does your spouse know you're looking for help with this?</li>
-                    <li>What do they currently feel about you exploring this type of solution?</li>
-                    <li>Would you say your spouse is more of a supporter, or do they have final say?</li>
-                    <li>How would you feel if they said no?</li>
-                    <li>When you've made investments like this in the past, how have you handled the decision together?</li>
-                    <li>If it were solely up to you, and you didn't have to consider anyone else, what would your decision be today?</li>
-                    <li>Is your partner available now? I'd be happy to wait if you want to go speak to them now.</li>
-                    <li>When will you have time to speak with them exactly?</li>
-                </ul>
-                
-                <h4>UNCERTAINTY OBJECTION:</h4>
-                <ul>
-                    <li>What do you feel might hold you back personally from getting results?</li>
-                    <li>What would make this feel like an absolute no-brainer investment for you? How do you usually decide if something is worth the money or not? If you achieved everything we spoke about, how valuable would that be to you personally?</li>
-                    <li><strong>What questions are still on your mind about how this would actually work for you?</strong></li>
-                    <li><strong>Do you believe this process can work in general, and you're just unsure if it can work for you?</strong></li>
-                    <li>What about right now makes this feel like the wrong time?</li>
-                    <li>How would you feel if in 1 year nothing had changed?</li>
-                    <li>When you say this is a lot of money, what does that mean to you?</li>
-                    <li>If finances weren't a factor at all for you and you had all the money in the world, what would your decision be today?</li>
-                    <li><strong>What specifically feels risky about moving forward?</strong></li>
-                    <li>What would give you the confidence that this is a safe decision?</li>
-                    <li>What's your biggest concern about committing to this fully?</li>
-                    <li>Do you feel like this process can get you to where you want to be?</li>
-                </ul>
-                
-                <div class="jump-links">
-                    <p><strong>Choose the objection type:</strong></p>
-                    <a href="#financial-objection" class="jump-link">→ Financial Objection</a>
-                    <a href="#support-objection" class="jump-link">→ Support Objection</a>
-                    <a href="#uncertainty-objection" class="jump-link">→ Uncertainty Objection</a>
+                <h4>If They Won't Share Resources:</h4>
+                <div class="script-box">
+                    <p>"Can I be honest with you for a second?"</p>
+                    <br>
+                    <p>"You just got done telling me that finances aside, you were 100% certain this process is what you needed... and that ultimately, it's your GOAL to make this work."</p>
+                    <br>
+                    <p>"But now it seems like you're not willing to be open and honest with me about where you're at financially so we can TOGETHER figure out a way to possibly make this work for you."</p>
+                    <br>
+                    <p>"So look... how do you expect me to support you if you're not willing to be open about what resources you really have?"</p>
                 </div>
             </div>
             
+            <div class="section" id="payment-options">
+                <h3>PAYMENT OPTIONS</h3>
+                
+                <div class="pricing-box">
+                    <h4>💰 Payment Structure</h4>
+                    <ul>
+                        <li><strong>Full Pay:</strong> $5,000</li>
+                        <li><strong>2-Pay:</strong> $2,500 x 2 (30 days apart)</li>
+                        <li><strong>Deposit:</strong> $1,000 refundable (balance within 7-14 days)</li>
+                    </ul>
+                </div>
+                
+                <h4>If They Can PIF (Pay In Full):</h4>
+                <div class="script-box">
+                    <p>"Can I tell you what I would do if I was you?"</p>
+                    <br>
+                    <p>"And you're sure this is what you want to do, correct?"</p>
+                    <br>
+                    <p>"Then I would do it upfront. Let me tell you why..."</p>
+                    <br>
+                    <p>"Two reasons:</p>
+                    <ol>
+                        <li>The people who commit 100% and go ALL IN are the ones who show up powerfully and get amazing results — because they've drawn the line in the sand</li>
+                        <li>Even if we break it up, you're going to end up paying it anyway. Might as well start with momentum."</li>
+                    </ol>
+                    <p><strong>"Make sense? Feel good? Ready to get started?"</strong></p>
+                </div>
+                
+                <h4>If They Need 2-Pay:</h4>
+                <div class="script-box">
+                    <p>"You still feel good about the process, right? You sure?"</p>
+                    <br>
+                    <p>"Great. So what I'd be willing to do for you is break up the investment into two payments of $2,500."</p>
+                    <br>
+                    <p>"That way you can get started immediately, start following the steps, start getting supported, and continue the momentum we've built on this call."</p>
+                    <br>
+                    <p>"The first $2,500 today, and then $2,500 in 30 days."</p>
+                    <br>
+                    <p>"The great thing is, by the time the second payment comes around, we'd have built so much momentum and you'd have seen such great results that it becomes an afterthought."</p>
+                    <br>
+                    <p><strong>"If that's something I'm willing to do for you, is that something you're willing to move forward with right now?"</strong></p>
+                </div>
+            </div>
+            
+            <div class="section" id="deposit-close">
+                <h3>DEPOSIT CLOSE ($1,000)</h3>
+                
+                <div class="principle-box">
+                    <strong>USE WHEN:</strong> Prospect is 100% tied down on the PROCESS but needs time to move money around, talk to spouse, etc.
+                </div>
+                
+                <div class="script-box">
+                    <p>"So just to be sure — having to move money around aside — there's nothing else keeping you from being less than 100% certain this is what you want to do?"</p>
+                    <br>
+                    <p>"So that aside, you're 100% in?"</p>
+                    <br>
+                    <p>"Awesome, well I'm happy to hear you're committed to getting on board! This stuff happens all the time, totally normal."</p>
+                    <br>
+                    <p>"What we do in cases where someone is 100% in and it's just a matter of moving money around is take a <strong>refundable deposit</strong>."</p>
+                    <br>
+                    <p>"It's completely refundable so it's not committing you to the program, but it allows us to know that you're in so we can get everything set up on the back-end and get you some homework. Once the funds come in, we're 100% ready to hit the ground running."</p>
+                    <br>
+                    <p>"And if for any reason you have a life crisis or something and can't do it, no worries — we send it back to you."</p>
+                    <br>
+                    <p><strong>"Sound good? Are you sure?"</strong></p>
+                    <br>
+                    <p><strong>"The deposit is just $1,000... what's your billing address?"</strong></p>
+                </div>
+                
+                <h4>Overcoming Deposit Resistance:</h4>
+                <div class="script-box">
+                    <p><strong>If they say "no" BEFORE amount:</strong></p>
+                    <p>"Ok — well, how do you mean?"</p>
+                    <br>
+                    <p>"Can I be honest with you for a second? You just got done telling me you were 100% in... and now you're having trouble with a 100% refundable deposit — and you don't even know the amount! I could've said $50! (laugh)"</p>
+                    <br>
+                    <p>"...so what's really going on?"</p>
+                </div>
+                
+                <div class="script-box">
+                    <p><strong>If they say "no" AFTER amount:</strong></p>
+                    <p>"Just to clarify... when you say you can't do the deposit, do you mean:</p>
+                    <ol>
+                        <li>You don't feel like the deposit is an appropriate next step right now?</li>
+                        <li>Or finances are so tight that $1,000 would jeopardize your ability to keep the lights on?"</li>
+                    </ol>
+                </div>
+            </div>
+            
+            <!-- OBJECTION HANDLING -->
             <div class="section" id="financial-objection">
-                <h3>FINANCIAL OBJECTION</h3>
+                <h2>💰 FINANCIAL OBJECTION</h2>
                 
-                <h4>STEP 2: TRUST</h4>
+                <div class="principle-box">
+                    <strong>REMEMBER:</strong> Always isolate first. Never throw payment plans without going through open wallet!
+                </div>
                 
-                <p>Alright, just to confirm you definitely want to do this, right?</p>
+                <h4>Step 1: Isolate</h4>
+                <div class="script-box">
+                    <p>"So finances aside, there's nothing else keeping you from being less than 100% certain that this is what you want to do?"</p>
+                    <br>
+                    <p>"So in other words... you're not in a 'SHOULD I do this' place — you're in a 'HOW can I do this' place where it's your GOAL to do this... it's just a matter of making it work financially?"</p>
+                </div>
                 
-                <p>Then what I'd be more than willing to do for you, is break the investment up into X monthly payments of $X. That way you can get started immediately, start following the steps, start getting supported, and continue the momentum we've started on this call. And if you decide to pay the whole thing off in full later, as long as it's 30 days prior to the final installment, I'll get rid of any extra incurred by breaking it up.</p>
+                <h4>Step 2: Open Wallet</h4>
+                <p><a href="#open-wallet" class="jump-link">→ Go to Open Wallet Framework</a></p>
                 
-                <h4>STEP 3: ASK</h4>
+                <h4>Step 3: Structure Based on Resources</h4>
+                <div class="script-box">
+                    <p>"So [$X] cash on hand today, and about [$Y] in 30 days. Is that correct?"</p>
+                    <br>
+                    <p>"I understand totally why when I mentioned $5,000 you hesitated — you can't do that right now. Even if you had $5,000, I wouldn't advise you to put it all in."</p>
+                    <br>
+                    <p>"But at the same time, because of this problem you've been having for [X years] and we need to solve it, it's really important that we take action."</p>
+                    <br>
+                    <p>"Would you agree?"</p>
+                    <br>
+                    <p>"So what if we did [$X] down and then [$Y] in 30 days? The great thing is, by the time the second payment comes around, we'd have built momentum and you'd have seen great results — it becomes an afterthought."</p>
+                    <br>
+                    <p><strong>"If I was willing to do that for you, would you be willing to move forward today?"</strong></p>
+                </div>
                 
-                <p>Does that make sense?</p>
-                
-                <p>How does that feel?</p>
-                
-                <p>Are you ready to get started?</p>
-                
-                <p>Awesome! We have two ways to process the investment, card or PayPal, what works best for you?</p>
+                <h4>"It's Too Much Money" Reframe:</h4>
+                <div class="script-box">
+                    <p>"When you say it's too much, what do you mean?"</p>
+                    <br>
+                    <p>"I hear you, and I appreciate you bringing that up."</p>
+                    <br>
+                    <p>"Can I be honest with you? Earlier on this call you told me that your worst fear was [THEIR PAIN getting worse, affecting work, etc.]..."</p>
+                    <br>
+                    <p>"So I want to put this in context. While I get that $5,000 might seem scary, this is an investment to get your HEALTH back. Your ability to work. Not just now, but for the rest of your LIFE."</p>
+                    <br>
+                    <p>"$5,000 spread across 365 days is just over $13 a day. Across 5 years, it's $2.70 a day."</p>
+                    <br>
+                    <p><strong>"Is that too much to invest in getting your health back?"</strong></p>
+                </div>
             </div>
             
             <div class="section" id="support-objection">
-                <h3>SUPPORT OBJECTION</h3>
+                <h2>👫 SPOUSE/PARTNER OBJECTION</h2>
                 
-                <h4>STEP 2: TRUST</h4>
+                <h4>Step 1: Isolate & Tie Down</h4>
+                <div class="script-box">
+                    <p>"So aside from letting your spouse know... there isn't anything else keeping you from being less than 100% certain that this is what you want to do?"</p>
+                    <br>
+                    <p>"So hypothetically, if your spouse was on this call and said '[NAME], I believe in you — do whatever is best for us' — you'd be 100% in?"</p>
+                </div>
                 
-                <p>Can I ask you an honest question? Like I said before, my goal is to help you make the best decision for yourself moving forward, and I completely understand needing to speak with your partner, I mean I'm not in the business of breaking up relationships, but if this decision was exclusively up to you and you didn't have anyone you needed to talk to, what would you decide to do? Would you be getting started right away?</p>
+                <h4>Step 2: Two Types (Critical!)</h4>
+                <div class="script-box">
+                    <p>"Totally understand. Now just for clarity's sake:"</p>
+                    <br>
+                    <p><strong>#1)</strong> Is this a 'respect' thing — where no matter what you're going to do this, you just want to let them know beforehand out of respect?</p>
+                    <br>
+                    <p><strong>Or #2)</strong> Do you need their permission to move forward? Meaning it's not ultimately your sole decision to make?"</p>
+                </div>
                 
-                <p>And how do you think they would feel if you did decide to do that?</p>
+                <h4>Step 3: Information Gathering</h4>
+                <ul>
+                    <li>"What do you think they'll think about this?"</li>
+                    <li>"What do you think they'll say when they hear the investment?"</li>
+                    <li>"Are you guys on the same page that this is a problem?"</li>
+                    <li>"Do they know about us? Do they know you're on this call?"</li>
+                    <li>"Is your partner available now? I'd be happy to wait."</li>
+                    <li>"When will you have time to speak with them exactly?"</li>
+                </ul>
                 
-                <p><strong>Accountability:</strong> Perfect! Well, considering you've decided this is right for you and you've said your partner would be 100% supportive, do you know what the only thing that could possibly hold you back is? Losing momentum. I've seen it happen too many times: someone is ready, their partner is completely supportive, but they pause, and in that pause they talk themselves out of it. And do you know what changes in their life? Absolutely nothing.</p>
+                <h4>Step 4: Contrast (Two Conversations)</h4>
+                <div class="script-box">
+                    <p>"I definitely want you to go talk to your spouse, but I want to remind you there's two ways you can bring this up:"</p>
+                    <br>
+                    <p><strong>Conversation #1:</strong> 'Hey honey, you know that wrist pain I've been struggling with? Well, I hopped on a call with this guy from the internet who might be able to help. It's $5,000 and uh... what do you think?'</p>
+                    <br>
+                    <p><strong>Conversation #2:</strong> 'Hey babe, I know this pain has been affecting my work and life. And I want to let you know I've DECIDED and COMMITTED to finally fixing this. I found people who can help, but before I move forward, I want your emotional support so we're in this together.'</p>
+                    <br>
+                    <p>"Which of those two people do you think is going to convince their spouse?"</p>
+                    <br>
+                    <p>"You're right — because if YOU'RE not certain about this, they're not going to be either."</p>
+                    <br>
+                    <p><strong>"So when you go talk to your spouse, which of those two people are you going to be?"</strong></p>
+                </div>
                 
-                <p><strong>Follow Up:</strong> Perfect! So let's schedule a time to reconnect after you've spoken with them. When do you think you'll be able to speak to them?</p>
+                <h4>If "Respect" → Deposit Close:</h4>
+                <a href="#deposit-close" class="jump-link green">→ Go to Deposit Close</a>
                 
-                <h4>STEP 3: ASK</h4>
-                
-                <p>Does that make sense?</p>
-                
-                <p>How does that feel?</p>
-                
-                <p>Are you ready to get started?</p>
-                
-                <p>Awesome! We have two ways to process the investment, card or PayPal, what works best for you?</p>
+                <h4>If "Permission" → Follow-Up Close:</h4>
+                <div class="script-box">
+                    <p>"Great — so when do you think you'll be able to talk to your spouse?"</p>
+                    <br>
+                    <p>"Awesome... so go talk to them, and let's set up another call on [DATE] to go over any questions and figure out our best next step."</p>
+                    <br>
+                    <p>"And look — if you still feel good, we can talk about getting going sooner rather than later. And if now isn't the right time, no worries. We'll keep communication open until you're ready."</p>
+                    <br>
+                    <p><strong>"Does that sound good?"</strong></p>
+                </div>
             </div>
             
             <div class="section" id="uncertainty-objection">
-                <h3>UNCERTAINTY OBJECTION</h3>
+                <h2>🤔 UNCERTAINTY / RISK OBJECTION</h2>
                 
-                <h4>STEP 2: TRUST</h4>
-                
-                <p>Can I be 100% honest with you?</p>
-                
-                <p>Like I said before, my goal is to help you make the best decision for yourself moving forward. That said, you just told me you feel confident this program has everything you need to succeed, and I could feel your excitement about getting started. But now that the decision is real, you don't sound certain at all. So let me ask you, what's really going on? Is it the fear, or is it the risk of making the decision?</p>
-                
-                <div class="jump-links">
-                    <p><strong>If they mention:</strong></p>
-                    <a href="#financial-objection" class="jump-link">→ Financial Concerns</a>
-                    <a href="#support-objection" class="jump-link">→ Need Partner Approval</a>
-                    <p><strong>If it's fear/risk, continue below:</strong></p>
+                <h4>"I Need to Think About It"</h4>
+                <div class="script-box">
+                    <p>"No problem."</p>
+                    <br>
+                    <p>"For a second, let's just pretend money is out of the equation. How do you feel about the <strong>process specifically</strong>? Do you feel like it's what you need to get to [OUTCOME]?"</p>
                 </div>
                 
-                <div class="important">
-                    <h4>STRONG STORY 1 - Addressing the Real Cause</h4>
-                    <p>Nothing works when you don't know what you're actually targeting.</p>
-                    
-                    <p>The reason your past attempts failed is because they focused on symptoms. What we do is assess your capacity, your load tolerance, and the mechanical bottlenecks keeping you stuck.</p>
-                    
-                    <p>Once we identify those, the path becomes predictable — and we adjust every step until your capacity exceeds your demands.</p>
-                    
-                    <p>That's why this doesn't fail.</p>
+                <h4>"What If It Doesn't Work?"</h4>
+                <div class="script-box">
+                    <p>"I hear you, and I appreciate that."</p>
+                    <br>
+                    <p>"So just to stay organized here... what you're saying is that despite our case studies and success rate, you're worried you'll be the one unlucky person this doesn't work for? (laugh)"</p>
+                    <br>
+                    <p>"Look, no worries. I get that. Can I ask you an honest question?"</p>
+                    <br>
+                    <p>"If you come in and do this, would you 100% put in the work?"</p>
+                    <br>
+                    <p>"And when you run into a challenge, would you raise your hand and reach out for help? Or bury your head in the sand and disappear? (laugh)"</p>
+                    <br>
+                    <p>"So if we have a high success rate... and you're 100% going to put in the work... and you promise me you'll reach out when you need help..."</p>
+                    <br>
+                    <p><strong>"Tell me, why exactly wouldn't this work for you?"</strong></p>
                 </div>
                 
-                <div class="important">
-                    <h4>STRONG STORY 2 - Time vs. Money</h4>
-                    <p>Can I be really honest with you? I love that you feel some fear and see this as risky because it means you'll take it seriously and do whatever it takes to succeed.</p>
-                    
-                    <p>But here's the truth, you're going to actually pay for this anyways. You can learn every lesson in the Power Leveling Program on your own. The information is definitely out there. Do you want it to take 12 weeks or 5 years.</p>
-                    
-                    <p>Because everything that we've learned in the past decade from helping thousands of people just like you we've put into the program AND you'll be getting direct support from us</p>
-                    
-                    <p>So you don't have to do trial and error for five more years while you get more conflicting information from doctors and get scared from doomer posts.</p>
-                    
-                    <p>So the question is: Not whether you are going to buy it or not. Just how are you going to pay. With your money… your time. Is it going to be this same cycle of what you have already experience that didn't really get you anywhere or something that has been proven to help people like you get somewhere.</p>
-                    
-                    <p>And if I'm being real, you've probably already been paying with time for the last 1-2 years</p>
+                <h4>"It's Too Risky"</h4>
+                <div class="script-box">
+                    <p>"When you say it's a 'big risk,' tell me more about what you mean..."</p>
+                    <br>
+                    <p>"I hear you, and all the greatest things in the world were built upon taking risks. That's a necessary requirement for building anything great."</p>
+                    <br>
+                    <p>"Let's look at the REAL risk here..."</p>
+                    <br>
+                    <p>"Is it riskier to:</p>
+                    <ol>
+                        <li>Do NOTHING and continue dealing with this pain — not knowing if it'll get worse — hoping something changes out of nowhere?</li>
+                        <li>Or go slightly into the red short-term, but get a proven system and team of experts who've helped hundreds of people like you?"</li>
+                    </ol>
+                    <br>
+                    <p><strong>"Which do you think is riskier? Doing nothing or doing something?"</strong></p>
                 </div>
                 
-                <h4>STEP 3: ASK</h4>
+                <h4>"I'm Just Nervous/Scared"</h4>
+                <div class="script-box">
+                    <p>"So you know this is what you need... it's just nerves?"</p>
+                    <br>
+                    <p>"GOOD. (pause)"</p>
+                    <br>
+                    <p>"It's good that you're nervous. The nerves are there for a reason — that means there's weight to it. Nothing great was ever built by someone who wasn't a little nervous at first."</p>
+                    <br>
+                    <p>"So being nervous is okay... but deep down, you should know despite the fear that it's the RIGHT thing."</p>
+                    <br>
+                    <p>"Earlier when I asked how you felt, you said it's what you needed, didn't you?"</p>
+                </div>
                 
-                <p>Does that make sense?</p>
+                <h4>Guarantee Question:</h4>
+                <div class="script-box">
+                    <p>"We guarantee measurable improvement. Follow the system for 12 weeks — complete your weekly sessions, track your progress — and if you're still not satisfied, we'll refund you in full."</p>
+                </div>
+            </div>
+            
+            <div class="section" id="time-objection">
+                <h2>⏰ TIME / TIMING OBJECTION</h2>
                 
-                <p>How does that feel?</p>
+                <div class="script-box">
+                    <p>"So if I'm hearing you correctly, you feel like this is what you need — it's just a matter of having time to implement it?"</p>
+                    <br>
+                    <p>"Can I be honest with you for a second?"</p>
+                    <br>
+                    <p>"If the very problem you got on this call to solve is exactly what's keeping you from getting started... then you're in a self-perpetuating loop — and you're stuck."</p>
+                    <br>
+                    <p>"Make sense?"</p>
+                    <br>
+                    <p>"So the real question is NOT when is going to be the right time, because it'll never feel like the right time..."</p>
+                    <br>
+                    <p>"The real question is: when are you going to STOP making decisions based on current circumstances and START making decisions out of a place of vision?"</p>
+                    <br>
+                    <p>"Because if you keep making decisions based on current circumstances, you're only going to generate what? More of the same."</p>
+                    <br>
+                    <p>"But when you start making decisions based on your future vision, you open yourself to a whole world of possibility."</p>
+                    <br>
+                    <p><strong>"So which of those people do you want to be?"</strong></p>
+                </div>
+            </div>
+            
+            <div class="section" id="tried-before">
+                <h2>😔 "I'VE TRIED SOMETHING SIMILAR"</h2>
                 
-                <p>Are you ready to get started?</p>
+                <div class="script-box">
+                    <p>"When you said you tried something similar and it didn't work, can you tell me more about that experience?"</p>
+                    <br>
+                    <p>"So what I'm hearing is you see how this is different, but because you tried that program in the past and it overpromised and underdelivered, now you're a little gun-shy. Is that correct?"</p>
+                    <br>
+                    <p>"I appreciate you being honest about that... and I've had similar experiences. It sucks and it's hard to talk about."</p>
+                    <br>
+                    <p>"Now, do I have permission to be brutally honest with you?"</p>
+                    <br>
+                    <p>"Earlier on this call, you told me that getting [THEIR OUTCOME] was non-negotiable. You said you'd be willing to do whatever it takes..."</p>
+                    <br>
+                    <p>"Think about the most successful people you know — do you think they got there because they quit after one bad decision?"</p>
+                    <br>
+                    <p>"Or is it really the opposite?"</p>
+                    <br>
+                    <p>"The real issue isn't that you got burned. It's what LESSON are you going to learn from that experience?"</p>
+                    <br>
+                    <p>"Are you going to learn that because you tried something once and it didn't work, you'll never reach out for help again?"</p>
+                    <br>
+                    <p>"Or do you want to learn that one bad decision can sometimes simply be the tuition we pay for making a better decision next time?"</p>
+                </div>
+            </div>
+            
+            <!-- SPECIAL CASES -->
+            <div class="section" id="bridge-program">
+                <h2>🌉 BRIDGE PROGRAM ($3,000)</h2>
                 
-                <p>Awesome! We have two ways to process the investment, card or PayPal, what works best for you?</p>
+                <div class="principle-box">
+                    <strong>FOR:</strong> Existing Troubleshooter App customers who want to upgrade to full Power Leveling
+                </div>
+                
+                <div class="script-box">
+                    <p>"Since you've already purchased the Troubleshooter program, you're actually in a unique position."</p>
+                    <br>
+                    <p>"We have what we call a Bridge Program specifically for people like you who've already made an investment and shown commitment."</p>
+                    <br>
+                    <p>"Instead of the full $5,000, the investment to upgrade to Power Leveling — with all the 1:1 support, check-in calls, and live clinics — is just $3,000."</p>
+                    <br>
+                    <p>"That gets you everything: the ten one-on-one calls, direct access to me and Dr. Smithson, the live Zoom clinics, and the full recovery system."</p>
+                    <br>
+                    <p><strong>"How does that feel?"</strong></p>
+                </div>
+            </div>
+            
+            <div class="section" id="downsell">
+                <h2>⬇️ DOWNSELL OPTIONS</h2>
+                
+                <div class="warning">
+                    <strong>USE ONLY IF:</strong> They're not a good fit for Power Leveling OR have extremely limited resources
+                </div>
+                
+                <h4>If Extremely Chronic / Sensitized / High Fear:</h4>
+                <div class="script-box">
+                    <p>"Based on your situation, I think you'll need a bit more guidance around understanding pain first."</p>
+                    <br>
+                    <p>"Right now Elliot and I are completely booked for the next quarter, but we're still offering coaching-based support through Brett, our occupational therapist and chronic pain specialist."</p>
+                    <br>
+                    <p>"You can book through here. It'll be helpful to learn more about pain. The two best resources available are the Explain Pain Handbook or The Way Out by Alan Gordon."</p>
+                </div>
+                
+                <h4>Troubleshooter with Calls Downsell:</h4>
+                <div class="script-box">
+                    <p>"This will benefit you. Through this call, you actually get a 20% discount. It ends in 24 hours."</p>
+                    <br>
+                    <p>"Let me generate the code for you."</p>
+                    <br>
+                    <p>"If you use this, no refunds."</p>
+                </div>
             </div>
             
             <div class="section" id="follow-up">
-                <h2>PART 4: FOLLOW UP</h2>
+                <h2>📞 FOLLOW-UP SCRIPT</h2>
                 
-                <p>Hey X, how are you?</p>
-                
-                <p>How've you been since we last spoke?</p>
-                
-                <p>How are you feeling about everything we spoke about?</p>
-                
-                <div class="jump-links">
-                    <p><strong>What happens next?</strong></p>
-                    <a href="#trial-close" class="jump-link">→ Positive Reaction</a>
-                    <a href="#questions" class="jump-link">→ They Ask a Question</a>
-                    <a href="#payment-plan" class="jump-link">→ Ask for Payment Plan</a>
-                    <a href="#objections" class="jump-link">→ Have Objection</a>
+                <h4>Setting the Follow-Up:</h4>
+                <div class="script-box">
+                    <p>"Let me pause you for a second here..."</p>
+                    <br>
+                    <p>"I gotta head off soon, and I actually don't want you to make a decision right now — I want you to think about it and make sure it's the right thing before making any decision. Ok?"</p>
+                    <br>
+                    <p>"So let's set up a call to iron out the rest of the details tomorrow and figure out what's going to be the best thing for you from there — sound good?"</p>
+                    <br>
+                    <p>"I have 2pm and 4pm open tomorrow... which works?"</p>
+                    <br>
+                    <p>"100% sure that works? Great. I'll send you a calendar invite."</p>
+                    <br>
+                    <p>"And short of getting hit by a bus (laugh), will you let me know if anything comes up where you can't make it?"</p>
+                    <br>
+                    <p>"Write down any questions you have and we can knock those out on the call."</p>
+                    <br>
+                    <p>"And look — if you still feel good, we can talk about getting going. If you start to feel like now isn't the right time, no worries. At the very worst, I'll give you some homework and we'll keep communication open until you're ready."</p>
                 </div>
                 
-                <p>You know, if we just put the investment and, like, the logistics of you figuring out whether you can join this aside, like, how are you feeling right now about this program? Like, are you, like, hell yes, like, not really into it, or in the middle, unsure?</p>
+                <h4>Running the Follow-Up:</h4>
+                <div class="script-box">
+                    <p>"So if it's alright with you, I'd like to recap our last call so we're talking about the same thing..."</p>
+                    <br>
+                    <p>"Last time we talked about [THEIR PAIN — surface level and emotional level]... and if you get that figured out, your real goal is [THEIR DESIRED OUTCOME — surface and emotional]."</p>
+                    <br>
+                    <p>"Did I miss anything? Do you still feel we're on the same page?"</p>
+                    <br>
+                    <p><strong>"Awesome... so how are you feeling?"</strong></p>
+                </div>
                 
-                <p>Why don't we just take…15 minutes next week, and we can just jump on a quick call and see how you're feeling</p>
+                <h4>Pre-Follow-Up Text (2 hours after):</h4>
+                <div class="script-box">
+                    <p>"How're you feeling about our call earlier?"</p>
+                </div>
+                
+                <h4>If Neutral/Negative Response:</h4>
+                <div class="script-box">
+                    <p>"Haha I can appreciate that..."</p>
+                    <br>
+                    <p>"Nerves and a little overwhelm are normal when you're on the edge of making a shift."</p>
+                    <br>
+                    <p>"Sleep on it and let's not make any decisions for now..."</p>
+                    <br>
+                    <p>"We can talk about if this is the right thing (and when) when we check in tomorrow."</p>
+                    <br>
+                    <p>"No worries either way 💪"</p>
+                </div>
+            </div>
+            
+            <!-- FRAMEWORKS -->
+            <div class="section" id="ciapatt">
+                <h2>🔧 CIA-PATT FRAMEWORK</h2>
+                
+                <div class="principle-box">
+                    <strong>USE FOR:</strong> Any objection after isolating to something specific
+                </div>
+                
+                <ol>
+                    <li><strong>C</strong>larify & Understand — What exactly do they mean?</li>
+                    <li><strong>I</strong>solate — "Aside from [objection], is there anything else...?"</li>
+                    <li><strong>A</strong>ppreciate & Reassure — "I appreciate you being honest about that..."</li>
+                    <li><strong>P</strong>ermission — "Can I be honest with you for a second?"</li>
+                    <li><strong>A</strong>ccountability — Bring back what they said earlier on the call</li>
+                    <li><strong>T</strong>ransform The Meaning — Reframe the objection</li>
+                    <li><strong>T</strong>ime To Decide — Contrast two choices</li>
+                </ol>
+            </div>
+            
+            <div class="section" id="reframes">
+                <h2>🔄 REFRAMES & PATTERNS</h2>
+                
+                <h4>The Call Out:</h4>
+                <div class="script-box">
+                    <p>"Can I be honest with you for a second?"</p>
+                    <br>
+                    <p>"You just got done telling me _____..."</p>
+                    <br>
+                    <p>"And now you're saying that ____..."</p>
+                    <br>
+                    <p>"What's really going on here?"</p>
+                </div>
+                
+                <h4>The Real Decision:</h4>
+                <div class="script-box">
+                    <p>"The real decision isn't whether you're going to work with me or anyone else..."</p>
+                    <br>
+                    <p>"The real decision is: are you ready to have your ACTIONS align with your WORDS?"</p>
+                    <br>
+                    <p>"Are you ready to stop [PAIN] and start [OUTCOME] or not?"</p>
+                </div>
+                
+                <h4>Circumstance vs Vision:</h4>
+                <div class="script-box">
+                    <p>"If the very problem you got on this call to solve is exactly what's keeping you from getting started... then you're in a self-perpetuating loop — and you're stuck."</p>
+                    <br>
+                    <p>"The real question is NOT when is going to be the right time..."</p>
+                    <br>
+                    <p>"The real question is: when are you going to stop making decisions based on current circumstances and start making decisions based on your vision?"</p>
+                </div>
+                
+                <h4>How Would You Feel If...:</h4>
+                <div class="script-box">
+                    <p>"How would you feel if you missed out on your only chance to [change your situation]?"</p>
+                    <br>
+                    <p>"How would you feel if you're in the exact same spot this time next year?"</p>
+                    <br>
+                    <p>"How would you feel if 6 months from now, your situation gets even worse?"</p>
+                </div>
+                
+                <h4>Two Types of People:</h4>
+                <div class="script-box">
+                    <p>"So which type of person do you want to be?"</p>
+                    <br>
+                    <p>"The person who is constantly reactive, making decisions based on current circumstances and going in circles?"</p>
+                    <br>
+                    <p>"Or the person who understands that 'if not NOW, when?' — who's able to get uncomfortable in the short-term because they know it means getting what they want in the long-term?"</p>
+                </div>
             </div>
         </main>
         
