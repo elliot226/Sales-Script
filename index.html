@@ -294,6 +294,31 @@
             margin: 30px 0;
         }
         
+        .pitch-style-guide {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 12px;
+            margin: 18px 0;
+        }
+        .pitch-style-card {
+            background: #f8f9fa;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            padding: 14px 18px;
+        }
+        .pitch-style-card.formula-1 { border-color: #2196f3; background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%); }
+        .pitch-style-card.formula-2 { border-color: #9c27b0; background: linear-gradient(135deg, #f3e5f5 0%, #e1bee7 100%); }
+        .pitch-style-card.formula-3 { border-color: #ff9800; background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%); }
+        .pitch-style-card strong { display: block; margin-bottom: 4px; font-size: 1.05em; }
+        .pitch-style-card span { font-size: 0.9em; color: #555; }
+        .pillar-block { margin: 24px 0; padding: 20px; background: #fafafa; border-radius: 10px; border-left: 4px solid #3498db; }
+        .pillar-block h4 { margin-top: 0; color: #2c3e50; }
+        .pillar-option { margin: 16px 0; padding: 14px 18px; border-radius: 8px; background: white; border: 1px solid #e8e8e8; }
+        .pillar-option .option-label { font-weight: 700; font-size: 0.9em; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px; padding-bottom: 6px; border-bottom: 1px solid #eee; }
+        .pillar-option .option-label.f1 { color: #1976d2; }
+        .pillar-option .option-label.f2 { color: #7b1fa2; }
+        .pillar-option .option-label.f3 { color: #e65100; }
+        
         @media (max-width: 900px) {
             .sidebar {
                 position: static;
@@ -334,6 +359,10 @@
                 <h3>Part 2: The Pitch</h3>
                 <ul>
                     <li><a href="#primary-pitch">Primary Pitch</a></li>
+                    <li style="padding-left: 12px; font-size: 0.85em;"><a href="#pillar-1">→ Pillar 1: Assess capacity</a></li>
+                    <li style="padding-left: 12px; font-size: 0.85em;"><a href="#pillar-2">→ Pillar 2: Tendon training</a></li>
+                    <li style="padding-left: 12px; font-size: 0.85em;"><a href="#pillar-3">→ Pillar 3: Scale activity</a></li>
+                    <li style="padding-left: 12px; font-size: 0.85em;"><a href="#pillar-4">→ Pillar 4: Pain reprocessing</a></li>
                     <li><a href="#temperature-check">Temperature Check (1-10)</a></li>
                     <li><a href="#double-tie-down">Double Tie-Down</a></li>
                     <li><a href="#pricing-reveal">Pricing Reveal</a></li>
@@ -547,23 +576,165 @@
                     <br>
                     <p><strong>Is that clear?</strong></p>
                     <br>
-                    <p>And we typically work with clients like you who have struggled with [<em>label their specific pain</em>] and we help them through:</p>
-                    <ul>
-                        <li><strong>Phase 1:</strong> Establishing capacity and building endurance</li>
-                        <li><strong>Phase 2:</strong> Teaching how to safely increase wrist & hand use with work and hobbies</li>
-                        <li><strong>Phase 3:</strong> Improving understanding of pain</li>
-                    </ul>
-                    <p><strong>Does that make sense?</strong></p>
+                    <p>We do that through <strong>four pillars</strong>. Pick the style below that fits who you're talking to — then walk them through each pillar in that style.</p>
+                </div>
+                
+                <h4>Choose Your Pitch Style by Prospect Type</h4>
+                <div class="pitch-style-guide">
+                    <div class="pitch-style-card formula-1">
+                        <strong>Formula 1: Feature → Benefit</strong>
+                        <span>Best for <strong>logical, data-driven</strong> people who want clarity and proof. Lead with what you do, then logical then emotional benefit.</span>
+                    </div>
+                    <div class="pitch-style-card formula-2">
+                        <strong>Formula 2: "You know how you told me…"</strong>
+                        <span>Best for people who need to <strong>feel understood</strong>. Mirror their pain (logical + emotional), then deliver your solution and benefits. End with "Make sense?"</span>
+                    </div>
+                    <div class="pitch-style-card formula-3">
+                        <strong>Formula 3: "Most of the market does this…"</strong>
+                        <span>Best for <strong>skeptical</strong> people who've been burned. Name the common mistake → why it's a problem → what you do instead → so that you can…</span>
+                    </div>
+                </div>
+                
+                <p><strong>Then say:</strong> "We typically work with clients like you who have struggled with [<em>label their specific pain</em>] and we help them through these four things:"</p>
+                
+                <!-- PILLAR 1 -->
+                <div class="pillar-block" id="pillar-1">
+                    <h4>Pillar 1: Assess capacity for repetitive movement</h4>
+                    
+                    <div class="pillar-option">
+                        <div class="option-label f1">Formula 1 — Feature / Logical / Emotional Benefit</div>
+                        <p><strong>Feature:</strong> 1HP Troubleshooter Comprehensive Assessment — endurance and Neural Tension Testing for the affected muscles, tendons, and nerves. Research-backed protocol, 3000+ data points.</p>
+                        <p><strong>Logical benefit:</strong> You have an exact understanding of your tissues’ capabilities and which tissues are involved.</p>
+                        <p><strong>Emotional benefit:</strong> You’re not confused about what you can really handle or what the exact muscles/tendons involved can handle. You have a solid baseline of where you are now.</p>
+                    </div>
+                    
+                    <div class="pillar-option">
+                        <div class="option-label f2">Formula 2 — "You know how you told me…"</div>
+                        <div class="script-box">
+                            <p>"You know how you told me you’ve been trying to fix this pain for months or years and haven’t been able to figure it out on your own, and the doctors couldn’t give you a solid understanding of what’s going on? And it’s making you feel lost, stuck, and confused — and scared you won’t be able to work or do the things you love anymore?"</p>
+                            <p><strong>Well what we do here is</strong> a thorough, research-backed, specific assessment of each of your pain regions to determine physiological endurance deficits and your baseline capacity. We do a comprehensive test to see exactly how much the muscles and tendons involved at your wrist and hand can handle, and we use that so you learn how to safely use your wrist and hand.</p>
+                            <p><strong>So that you can have</strong> clarity on where you’re starting from and a better understanding of how much you can handle and where you need to be — which lets you understand one of the root causes of your specific pain, how to safely use your wrist and hands more over time, improve capacity, and get back to using your hands safely.</p>
+                            <p><strong>Tie-down:</strong> "Make sense?"</p>
+                            <p><em>Optional:</em> "And the reason this is important is that without a thorough assessment you’re just guessing what tissues are causing your pain and you have no idea what your capacity for repetitive movement really is — so you don’t have to worry whether what you’re doing daily is exceeding what you can handle, and if it does, you’ll know exactly what to do."</p>
+                        </div>
+                    </div>
+                    
+                    <div class="pillar-option">
+                        <div class="option-label f3">Formula 3 — "Most of the market is doing this…"</div>
+                        <div class="script-box">
+                            <p><strong>Most of the market:</strong> Most doctors do a quick evaluation and recommend the easiest things to prescribe — barely 10–15 minutes evaluating your problem.</p>
+                            <p><strong>Why that’s a problem:</strong> You get no clarity on which tissues are causing your pain or what the endurance capacity of those muscles, tendons, and nerves is. So you get ineffective treatments that don’t target root causes — and you stay stuck in a cycle of pain and frustration for months or years.</p>
+                            <p><strong>So instead, what we do:</strong> A thorough evaluation of the capacity of all the structures responsible for repetitive movement in your fingers, wrists, forearms, and elbows — specific endurance tests to find your deficits. So you understand where your baseline is and exactly how much you can handle, and ultimately do the right exercises and get back to using your wrist and hands safely.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- PILLAR 2 -->
+                <div class="pillar-block" id="pillar-2">
+                    <h4>Pillar 2: Tendon Neuroplastic Training</h4>
+                    
+                    <div class="pillar-option">
+                        <div class="option-label f1">Formula 1 — Feature / Logical / Emotional Benefit</div>
+                        <p><strong>Feature:</strong> Specific exercise plan with videos, instructions, and daily tracking logs so exercises scale daily according to your current capacity.</p>
+                        <p><strong>Logical benefit:</strong> You know exactly what exercises to do, how many sets, reps, and weight to do daily.</p>
+                        <p><strong>Emotional benefit:</strong> You’re not guessing what’s targeting your tissues or confused about how much is safe daily. You have a clear roadmap to recovery.</p>
+                    </div>
+                    
+                    <div class="pillar-option">
+                        <div class="option-label f2">Formula 2 — "You know how you told me…"</div>
+                        <div class="script-box">
+                            <p>"You know how you told me you didn’t have a lot of clarity in the past about what exercises were right for your pain regions, or whether you were doing enough or too much — and it’s making you feel lost and confused and you keep having setbacks because of it?"</p>
+                            <p><strong>Well what we do here is</strong> give you a custom exercise program specific to your pain regions, designed to scale with your ability as your muscles, tendons, and nerves adapt.</p>
+                            <p><strong>So that you can have</strong> clarity on the exact parameters for each exercise daily — which lets you feel confident you’re progressing safely.</p>
+                            <p><strong>Tie-down:</strong> "Make sense?"</p>
+                            <p><em>Optional:</em> "And the reason this matters is that if you’re doing a mix of random exercises from PTs, OTs, YouTube, and ChatGPT, you won’t know if they’re right or if you’re scaling them properly."</p>
+                        </div>
+                    </div>
+                    
+                    <div class="pillar-option">
+                        <div class="option-label f3">Formula 3 — "Most of the market is doing this…"</div>
+                        <div class="script-box">
+                            <p><strong>Most of the market:</strong> Looking on the internet for the right program and not sure if it fits their specific pain regions; or doing cookie-cutter set/rep ranges from a PT/OT.</p>
+                            <p><strong>Why that’s a problem:</strong> The plan may not match their physiologic deficits; rep ranges are often too low for endurance with no progression; nothing is based on what they actually can do in the context of their full picture.</p>
+                            <p><strong>So instead, what we do:</strong> Give you an exact exercise program that scales daily based on your performance, with progressions/regressions based on our tests and direct conversation with you. So you have absolute clarity that what you’re doing addresses the right tissues and how to progress each exercise daily — and ultimately build capacity and learn how to safely use your wrist and hands more.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- PILLAR 3 -->
+                <div class="pillar-block" id="pillar-3">
+                    <h4>Pillar 3: Scale the desired activity over time</h4>
+                    
+                    <div class="pillar-option">
+                        <div class="option-label f1">Formula 1 — Feature / Logical / Emotional Benefit</div>
+                        <p><strong>Feature:</strong> Activity load tracking that assesses tissue tolerance to functional activities for work or hobbies and prescribes safe time recommendations so you can scale up functional tissue tolerance over time.</p>
+                        <p><strong>Logical benefit:</strong> You understand how much time is safe to use your hands for work or hobbies daily.</p>
+                        <p><strong>Emotional benefit:</strong> You’re not confused or scared about how much is safe to do with your hands daily — so you can safely and confidently progress back to 100% use for work and hobbies.</p>
+                    </div>
+                    
+                    <div class="pillar-option">
+                        <div class="option-label f2">Formula 2 — "You know how you told me…"</div>
+                        <div class="script-box">
+                            <p>"You know how you told me you aren’t sure how much is safe to do with your hands for work or hobbies — and it’s making you feel scared to do any of your work or hobby activities?"</p>
+                            <p><strong>Well what we do here is</strong> calculate your tissue irritability and give you specific time recommendations for how much to use your hands for each activity daily.</p>
+                            <p><strong>So that you can have</strong> a safe, scalable roadmap to returning to full activity — and feel confident using your hands for what you depend on for work or love.</p>
+                            <p><strong>Tie-down:</strong> "Make sense?"</p>
+                            <p><em>Optional:</em> "And the reason this is important is that without clear daily recommendations you can overuse your hands, cause a flare-up, set yourself back, and stay in a pain/fear/avoidance cycle."</p>
+                        </div>
+                    </div>
+                    
+                    <div class="pillar-option">
+                        <div class="option-label f3">Formula 3 — "Most of the market is doing this…"</div>
+                        <div class="script-box">
+                            <p><strong>Most of the market:</strong> Using their hands until they flare up, then getting scared and avoiding activity until they feel better — muscles and tendons atrophy, they go back to the activity and end up in pain sooner, and they get stuck in a pain–fear–avoidance spiral.</p>
+                            <p><strong>Why that’s a problem:</strong> Tissues become extremely deconditioned and they can barely do anything with their hands — loss of work/income and loss of hobbies and joy.</p>
+                            <p><strong>So instead, what we do:</strong> Daily activity load tracking that assesses tissue tolerance and prescribes safe time recommendations so you can scale up over time — and we do this with an improved understanding of pain. So you can confidently scale up tolerance and return to full function, understand why you can still safely do certain activities despite some pain, and ultimately stop having to think or worry about your pain.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- PILLAR 4 -->
+                <div class="pillar-block" id="pillar-4">
+                    <h4>Pillar 4: Neuroplastic pain reprocessing coaching</h4>
+                    
+                    <div class="pillar-option">
+                        <div class="option-label f1">Formula 1 — Feature / Logical / Emotional Benefit</div>
+                        <p><strong>Feature:</strong> Pain reprocessing therapy through pain science education and functional pain reprocessing mental exercises for the hypersensitive nervous system.</p>
+                        <p><strong>Logical benefit:</strong> RSIs develop over long periods, so there’s always some nervous-system hypersensitivity with the tissue deficits; we address the neurological/psychological contributors. Fears and beliefs from past experiences often need to be addressed.</p>
+                        <p><strong>Emotional benefit:</strong> One-on-one coaching for your fears, beliefs, and past experiences with pain — so you’re confident you’re correctly managing the psychological side and can manage it yourself in the future, and you improve your relationship with pain and reduce fear around the things you love.</p>
+                    </div>
+                    
+                    <div class="pillar-option">
+                        <div class="option-label f2">Formula 2 — "You know how you told me…"</div>
+                        <div class="script-box">
+                            <p>"You know how you told me you have a lot of fear, negative beliefs, or past experiences with pain — and it’s making you feel scared and confused?"</p>
+                            <p><strong>Well what we do here is</strong> help you reprocess the chronic pain by addressing psychological contributors like fear, beliefs of harm, and recontextualizing past experiences — and help you understand pain through a system that reprocesses your pain across different experiences and scenarios.</p>
+                            <p><strong>So that you can have</strong> a rewired nervous system that’s less sensitive as you progress and address the physiologic contributors — and an improved relationship with pain that reduces fear and anxiety about using your hands for the activities you want.</p>
+                            <p><strong>Tie-down:</strong> "Make sense?"</p>
+                            <p><em>Optional:</em> "And the reason this matters is that most approaches only treat the physical, lifestyle, or psychosocial side; very few address all of them together in the context of your situation — which is usually clear after the first [FREE] call."</p>
+                        </div>
+                    </div>
+                    
+                    <div class="pillar-option">
+                        <div class="option-label f3">Formula 3 — "Most of the market is doing this…"</div>
+                        <div class="script-box">
+                            <p><strong>Most of the market:</strong> No idea there’s a neurological/psychological component to chronic pain from RSIs — only addressing surface symptoms with band-aid fixes.</p>
+                            <p><strong>Why that’s a problem:</strong> RSIs develop over a long time, so there’s always a neurological/psychological component; the brain and nervous system get better at feeling pain the longer it goes on. Tissues may have healed but past experiences, fears, and beliefs of damage keep the nervous system hypersensitive — so you feel pain when you otherwise wouldn’t.</p>
+                            <p><strong>So instead, what we do:</strong> Educate you on how your nervous system works and work one-on-one on the neurological/psychological factors holding you back — so you can confidently return to full function and, through a better relationship with pain, never have to worry about this pain again.</p>
+                        </div>
+                    </div>
                 </div>
                 
                 <div class="script-box">
-                    <p>"We do this by giving you access to our step-by-step recovery system inside the 1HP App. It starts by establishing a comprehensive baseline with me or Dr. Smithson, then establishes a plan, helps you understand how to progress and manage any situation throughout recovery.</p>
+                    <p><strong>After the four pillars:</strong> "We do this by giving you access to our step-by-step recovery system inside the 1HP App. It starts by establishing a comprehensive baseline with me or Dr. Smithson, then establishes a plan, helps you understand how to progress and manage any situation throughout recovery.</p>
                     <br>
                     <p>You also get access to a private community where you can ask questions anytime, get quick feedback, and stay connected with others going through the same process.</p>
                     <br>
                     <p>And most importantly, you'll get direct access to me or anyone on our team. We will be there every step of the way because you'll have <strong>ten one-on-one check-in calls</strong> to make sure you're improving as quickly as possible. Every week we host live Zoom Clinics where I go through questions you can submit (anonymously), review real cases live, and help members troubleshoot whatever's getting in their way.</p>
                     <br>
                     <p>The goal is simple — you'll have a clear structure, constant support, and a real path back to full capacity.</p>
+                    <br>
+                    <p><strong>Does that make sense?</strong></p>
                     <br>
                     <p><strong>Any questions on that?</strong>"</p>
                 </div>
